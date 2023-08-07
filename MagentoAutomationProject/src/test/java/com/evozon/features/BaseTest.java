@@ -1,9 +1,6 @@
 package com.evozon.features;
 
-import com.evozon.steps.CheckoutSteps;
-import com.evozon.steps.LoginSteps;
-import com.evozon.steps.ProductsListSteps;
-import com.evozon.steps.RegisterSteps;
+import com.evozon.steps.*;
 import com.evozon.utils.Constants;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -28,6 +25,12 @@ public abstract class BaseTest {
 
     @Steps
     protected CheckoutSteps checkoutSteps;
+
+    @Steps
+    protected CartSteps cartSteps;
+
+    @Steps
+    protected OrderConfirmationSteps orderConfirmationSteps;
 
     @Before
     public void init() {
