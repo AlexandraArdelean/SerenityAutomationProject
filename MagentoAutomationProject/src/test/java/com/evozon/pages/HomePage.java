@@ -2,6 +2,7 @@ package com.evozon.pages;
 
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.support.FindBy;
+
 public class HomePage extends BasePage {
     @FindBy(css = ".skip-account .label")
     private WebElementFacade accountLink;
@@ -11,6 +12,11 @@ public class HomePage extends BasePage {
 
     @FindBy(css = "a[title='Register']")
     private WebElementFacade registerLink;
+
+    @FindBy(id = "search")
+    private WebElementFacade searchBar;
+    @FindBy(css = ".input-box [title='Search']")
+    private WebElementFacade magnifyingGlassIcon;
 
     public void clickAccountLink() {
         this.clickOn(this.accountLink);
@@ -22,5 +28,13 @@ public class HomePage extends BasePage {
 
     public void clickRegisterLink() {
         this.clickOn(this.registerLink);
+    }
+
+    public void searchForProduct(String productName) {
+        typeInto(searchBar, productName);
+    }
+
+    public void clickOnSearchIcon() {
+        clickOn(magnifyingGlassIcon);
     }
 }
