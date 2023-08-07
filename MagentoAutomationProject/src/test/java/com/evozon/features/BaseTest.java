@@ -1,8 +1,10 @@
 package com.evozon.features;
 
+import com.evozon.steps.LoginSteps;
 import com.evozon.utils.Constants;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.Steps;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +14,9 @@ public class BaseTest {
 
     @Managed(uniqueSession = true)
     protected WebDriver driver;
+
+    @Steps
+    protected LoginSteps loginSteps;
 
     @Before
     public void init() {
