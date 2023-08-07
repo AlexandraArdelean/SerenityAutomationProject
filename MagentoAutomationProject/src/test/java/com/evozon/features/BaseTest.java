@@ -1,6 +1,7 @@
 package com.evozon.features;
 
 import com.evozon.steps.LoginSteps;
+import com.evozon.steps.ProductsListSteps;
 import com.evozon.steps.RegisterSteps;
 import com.evozon.utils.Constants;
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -16,6 +17,8 @@ public abstract class BaseTest {
     @Managed(uniqueSession = true)
     protected WebDriver driver;
 
+    @Steps
+    protected ProductsListSteps productsListSteps;
     @Steps
     protected LoginSteps loginSteps;
 

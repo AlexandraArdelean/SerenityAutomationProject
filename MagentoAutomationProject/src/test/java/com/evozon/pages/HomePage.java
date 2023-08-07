@@ -13,6 +13,11 @@ public class HomePage extends BasePage {
     @FindBy(css = "a[title='Register']")
     private WebElementFacade registerLink;
 
+
+    @FindBy(id = "search")
+    private WebElementFacade searchBar;
+    @FindBy(css = ".input-box [title='Search']")
+    private WebElementFacade magnifyingGlassIcon;
     @FindBy(className = "welcome-msg")
     private WebElementFacade welcomeTextParagraph;
 
@@ -28,6 +33,13 @@ public class HomePage extends BasePage {
         this.clickOn(this.registerLink);
     }
 
+    public void searchForProduct(String productName) {
+        typeInto(searchBar, productName);
+    }
+
+    public void clickOnSearchIcon() {
+        clickOn(magnifyingGlassIcon);
+    }
     public String getWelcomeTextUsername() {
         return this.welcomeTextParagraph.getText()
                 .replaceAll("WELCOME, ", "")
