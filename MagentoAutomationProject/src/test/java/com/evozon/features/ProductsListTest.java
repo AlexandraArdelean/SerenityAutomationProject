@@ -1,6 +1,5 @@
 package com.evozon.features;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 public class ProductsListTest extends BaseTest {
