@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 public class WishlistPage extends BasePage {
     @FindBy(css = ".success-msg")
     private WebElementFacade addToWishlistSuccessMsg;
-    
+
 
 
 
