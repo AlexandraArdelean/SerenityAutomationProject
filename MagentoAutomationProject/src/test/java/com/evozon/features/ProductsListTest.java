@@ -19,5 +19,6 @@ public class ProductsListTest extends BaseTest {
     public void addProductToCart(){
         productsListSteps.searchAProduct("earrings");
         productsListSteps.addSimpleProductToCart("SWING TIME EARRINGS");
+        productsListSteps.verifyIsProductAddedToCart();
     }
 }
