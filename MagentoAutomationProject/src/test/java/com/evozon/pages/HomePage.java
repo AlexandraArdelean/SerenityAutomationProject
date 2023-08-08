@@ -39,6 +39,8 @@ public class HomePage extends BasePage {
 
     public void clickOnSearchIcon() {
         clickOn(magnifyingGlassIcon);
+    }
+
     public String getWelcomeTextUsername() {
         return this.welcomeTextParagraph.getText()
                 .replaceAll("WELCOME, ", "")
