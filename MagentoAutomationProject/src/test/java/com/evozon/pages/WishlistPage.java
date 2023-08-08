@@ -3,7 +3,6 @@ package com.evozon.pages;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
@@ -40,9 +39,15 @@ public class WishlistPage extends BasePage {
     }
 
     public void setQuantityWishlistField(String name, int qty) {
-        WebElementFacade element = findProductToModifyQty(name).find(By.cssSelector(" .input-text"));
+        WebElementFacade element = findProductToModifyQty(name).find(By.cssSelector(".cart-cell .input-text"));
         element.clear();
         typeInto(element, String.valueOf(qty));
+    }
+
+    public String getQuantity(String name) {
+        WebElementFacade elementFacade = findProductToModifyQty(name).find(By.cssSelector(".cart-cell .input-text"));
+        return elementFacade.getValue();
+
     }
 
     public void clickOnUpdateWishlistBtn() {

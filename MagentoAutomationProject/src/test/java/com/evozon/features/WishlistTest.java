@@ -16,6 +16,8 @@ public class WishlistTest extends BaseTest {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASSWORD);
         accountSteps.addProductToWishlist(Constants.SIMPLE_PRODUCT);
         wishlistSteps.updateItemQtyInWishlist(Constants.SIMPLE_PRODUCT, 5);
+        wishlistSteps.verifyIfQuantityWasUpdated(Constants.SIMPLE_PRODUCT);
+
     }
 
     @Test

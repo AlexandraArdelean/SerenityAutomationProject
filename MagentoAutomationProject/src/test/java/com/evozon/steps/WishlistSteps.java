@@ -17,6 +17,12 @@ public class WishlistSteps extends BaseSteps {
     }
 
     @Step
+    public void verifyIfQuantityWasUpdated(String name) {
+        Assert.assertEquals("5", wishlistPage.getQuantity(name));
+
+    }
+
+    @Step
     public void clickAddToCart() {
         wishlistPage.clickOnAddToCartButton();
     }
