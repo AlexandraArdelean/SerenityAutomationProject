@@ -30,7 +30,7 @@ public class ProductsListSteps extends BaseSteps {
     public void verifySortByPriceAscending() {
         setSortByPrice();
         Assert.assertTrue("Products are sort in ascending order by price!", productsListPage.isSortByPriceAscending());
-
     }
+
 
 }
