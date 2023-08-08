@@ -9,7 +9,11 @@ public class CartPage extends BasePage {
 
     public String getAddToCartMessage() {
         return addToCartSuccessMessage.getText();
+    @FindBy(css = ".bottom .btn-checkout")
+    private WebElementFacade bottomCheckoutButton;
 
+    public void clickBottomCheckoutButton() {
+        this.clickOn(this.bottomCheckoutButton);
 
     }
 }

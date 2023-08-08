@@ -11,6 +11,6 @@ public class LoginTest extends BaseTest{
         loginSteps.enterEmailAddress(Constants.USER_EMAIL);
         loginSteps.enterPassword(Constants.USER_PASSWORD);
         loginSteps.clickLogin();
-        loginSteps.verifyUserIsLoggedIn("Test T Test");
+        loginSteps.verifyUserIsLoggedIn(Constants.USER_NAME);
     }
 }

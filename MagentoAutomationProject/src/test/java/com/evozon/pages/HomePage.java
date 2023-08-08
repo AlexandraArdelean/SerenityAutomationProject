@@ -41,6 +41,7 @@ public class HomePage extends BasePage {
         clickOn(magnifyingGlassIcon);
     }
 
+
     public String getWelcomeTextUsername() {
         return this.welcomeTextParagraph.getText()
                 .replaceAll("WELCOME, ", "")
