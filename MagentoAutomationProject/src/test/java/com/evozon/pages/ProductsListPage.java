@@ -1,6 +1,5 @@
 package com.evozon.pages;
 
-import net.serenitybdd.core.SerenityReports;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.junit.Assert;
 import org.openqa.selenium.By;

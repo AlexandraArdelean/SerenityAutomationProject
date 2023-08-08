@@ -12,8 +12,13 @@ public class ProductsListSteps extends BaseSteps {
     }
 
     @Step
-    public void addSimpleProductToCart(String productName){
+    public void addSimpleProductToCart(String productName) {
         productsListPage.addToCartByName(productName);
+    }
+
+    @Step
+    public void verifyIsProductAddedToCart() {
+        Assert.assertEquals("Swing Time Earrings was added to your shopping cart.", cartPage.getAddToCartMessage());
     }
 
     @Step
