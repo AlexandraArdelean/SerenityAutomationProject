@@ -15,6 +15,13 @@ public class WishlistTest extends BaseTest {
     public void editProductQty() {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASSWORD);
         accountSteps.addProductToWishlist(Constants.SIMPLE_PRODUCT);
-        wishlistSteps.updateItemQtyInWishlist(5);
+        wishlistSteps.updateItemQtyInWishlist(Constants.SIMPLE_PRODUCT, 5);
+    }
+
+    @Test
+    public void addToCartFromWishlist() {
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASSWORD);
+        accountSteps.addProductToWishlist(Constants.SIMPLE_PRODUCT);
+        wishlistSteps.clickAddToCart();
     }
 }

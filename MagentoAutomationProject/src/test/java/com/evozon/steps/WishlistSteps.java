@@ -11,8 +11,13 @@ public class WishlistSteps extends BaseSteps {
     }
 
     @Step
-    public void updateItemQtyInWishlist(int qty) {
-        wishlistPage.setQuantityWishlistField(qty);
+    public void updateItemQtyInWishlist(String name, int qty) {
+        wishlistPage.setQuantityWishlistField(name, qty);
         wishlistPage.clickOnUpdateWishlistBtn();
+    }
+
+    @Step
+    public void clickAddToCart() {
+        wishlistPage.clickOnAddToCartButton();
     }
 }
