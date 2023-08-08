@@ -8,7 +8,6 @@ public class WishlistTest extends BaseTest {
     public void doAddProductToWishlist() {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASSWORD);
         accountSteps.addProductToWishlist("RETRO CHIC EYEGLASSES");
-        wishlistSteps.verifySuccessMessage();
-
+        wishlistSteps.verifySuccessMessage("Retro Chic Eyeglasses");
     }
 }

@@ -8,8 +8,6 @@ public class WishlistPage extends BasePage {
     private WebElementFacade addToWishlistSuccessMsg;
 
 
-
-
     public String getAddToWishListMsgSuccess() {
         return addToWishlistSuccessMsg.getText();
     }
