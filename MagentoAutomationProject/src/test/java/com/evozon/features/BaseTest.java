@@ -32,6 +32,9 @@ public abstract class BaseTest {
     @Steps
     protected OrderConfirmationSteps orderConfirmationSteps;
 
+    @Steps
+    protected ProductDetailsSteps productDetailsSteps;
+
     @Before
     public void init() {
         driver.manage().window().maximize();
