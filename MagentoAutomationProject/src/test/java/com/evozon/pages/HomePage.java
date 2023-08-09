@@ -26,7 +26,7 @@ public class HomePage extends BasePage {
     @FindBy(className = "welcome-msg")
     private WebElementFacade welcomeTextParagraph;
 
-    @FindBy(css = "a.level0")
+    @FindBy(css = "li.level0")
     private List<WebElementFacade> categoryLinks;
 
     public void clickAccountLink() {
@@ -55,7 +55,7 @@ public class HomePage extends BasePage {
 
     private WebElementFacade findCategoryLinkByName(String categoryName) {
         return categoryLinks.stream()
-                .filter(el -> categoryName.equalsIgnoreCase(el.getText()))
+                .filter(el -> categoryName.equalsIgnoreCase(el.find(By.cssSelector("a.level0")).getText()))
                 .findFirst()
                 .orElse(null);
     }
