@@ -3,7 +3,10 @@ package com.evozon.steps;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 
+
 public class WishlistSteps extends BaseSteps {
+
+
     @Step
     public void verifySuccessMessage(String productName) {
         Assert.assertEquals(productName + " has been added to your wishlist. Click here to continue shopping.",
@@ -17,8 +20,8 @@ public class WishlistSteps extends BaseSteps {
     }
 
     @Step
-    public void verifyIfQuantityWasUpdated(String name) {
-        Assert.assertEquals("5", wishlistPage.getQuantity(name));
+    public void verifyIfQuantityWasUpdated(String qty, String name) {
+        Assert.assertEquals(qty, wishlistPage.getQuantity(name));
 
 
     }
