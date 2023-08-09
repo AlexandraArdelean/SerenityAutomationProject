@@ -2,22 +2,23 @@ package com.evozon.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
-import org.openqa.selenium.WebElement;
 
-public class AccountPage extends BasePage {
+public class AccountLinksPage extends BasePage {
     @FindBy(css = ".hello strong")
     private WebElementFacade welcomeTextParagraph;
 
     @FindBy(xpath = "//a[text()='Account Information']")
     private WebElementFacade accountInformationLink;
 
-    @FindBy(id = "search")
-    private WebElement searchBar;
-    @FindBy(css = "[title='Search']")
-    private WebElement magnifyingGlassButton;
+    @FindBy(xpath = "//a[text()='Newsletter Subscriptions']")
+    private WebElementFacade newsletterSubscriptionsLink;
 
     public void clickAccountInformationLink() {
         clickOn(accountInformationLink);
+    }
+
+    public void clickNewsletterInformationLink() {
+        clickOn(newsletterSubscriptionsLink);
     }
 
     public void verifyLoggedIn(String userName) {

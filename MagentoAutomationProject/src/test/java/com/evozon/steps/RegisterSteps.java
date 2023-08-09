@@ -48,9 +48,4 @@ public class RegisterSteps extends BaseSteps {
     public void clickRegister() {
         registerPage.clickRegisterButton();
     }
-
-    @Step
-    public void verifyUserIsRegistered(String username) {
-        // Assert.assertThat(homePage.getWelcomeTextUsername(), Matchers.equalToIgnoringCase(username));
-    }
 }

@@ -8,12 +8,12 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 
 public abstract class BaseTest {
-
     @Managed(uniqueSession = true)
     protected WebDriver driver;
 
     @Steps
     protected ProductsListSteps productsListSteps;
+
     @Steps
     protected LoginSteps loginSteps;
 
@@ -28,6 +28,7 @@ public abstract class BaseTest {
 
     @Steps
     protected OrderConfirmationSteps orderConfirmationSteps;
+
     @Steps
     protected WishlistSteps wishlistSteps;
 
@@ -43,10 +44,12 @@ public abstract class BaseTest {
     @Steps
     protected AccountInformationSteps accountInformationSteps;
 
+    @Steps
+    protected AccountNewsletterSteps accountNewsletterSteps;
+
     @Before
     public void init() {
         driver.manage().window().maximize();
         driver.get(Constants.BASE_URL);
     }
-
 }
