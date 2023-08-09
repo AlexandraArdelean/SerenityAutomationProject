@@ -4,29 +4,29 @@ import net.thucydides.core.annotations.Step;
 
 public class ProductDetailsSteps extends BaseSteps {
     @Step
-    public void selectColour(final String colour) {
-        this.productDetailsPage.selectColourOption(colour);
+    public void selectColour(String colour) {
+        productDetailsPage.selectColourOption(colour);
     }
 
     @Step
-    public void selectSize(final String size) {
-        this.productDetailsPage.selectSizeOption(size);
+    public void selectSize(String size) {
+        productDetailsPage.selectSizeOption(size);
     }
 
     @Step
     public void clickAddToCart() {
-        this.productDetailsPage.clickAddToCartButton();
+        productDetailsPage.clickAddToCartButton();
     }
 
     @Step
-    public void addToCartCustomisableClothing(final String colour, final String size) {
-        this.selectColour(colour);
-        this.selectSize(size);
-        this.clickAddToCart();
+    public void addToCartCustomisableClothing(String colour, String size) {
+        selectColour(colour);
+        selectSize(size);
+        clickAddToCart();
     }
 
     @Step
-    public void selectLinkByTitle(final String title) {
-        this.productDetailsPage.selectLinkByTitle(title);
+    public void selectLinkByTitle(String title) {
+        productDetailsPage.selectLinkByTitle(title);
     }
 }

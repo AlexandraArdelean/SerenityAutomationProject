@@ -28,36 +28,36 @@ public class RegisterPage extends BasePage {
     @FindBy(css = "button[title=Register] span span")
     private WebElementFacade registerButton;
 
-    public void setFirstNameInput(final String firstName) {
-        this.typeInto(this.firstNameInput, firstName);
+    public void setFirstNameInput(String firstName) {
+        typeInto(firstNameInput, firstName);
     }
 
-    public void setMiddleNameInput(final String middleName) {
-        this.typeInto(this.middleNameInput, middleName);
+    public void setMiddleNameInput(String middleName) {
+        typeInto(middleNameInput, middleName);
     }
 
-    public void setLastNameInput(final String lastName) {
-        this.typeInto(this.lastNameInput, lastName);
+    public void setLastNameInput(String lastName) {
+        typeInto(lastNameInput, lastName);
     }
 
-    public void setEmailInput(final String email) {
-        this.typeInto(this.emailInput, email);
+    public void setEmailInput(String email) {
+        typeInto(emailInput, email);
     }
 
-    public void setPasswordInput(final String password) {
-        this.typeInto(this.passwordInput, password);
+    public void setPasswordInput(String password) {
+        typeInto(passwordInput, password);
     }
 
-    public void setConfirmPasswordInput(final String password) {
-        this.typeInto(this.confirmPasswordInput, password);
+    public void setConfirmPasswordInput(String password) {
+        typeInto(confirmPasswordInput, password);
     }
 
     public void setSignUpNewsletterCheckbox() {
-        this.clickOn(this.signUpNewsletterCheckbox);
+        clickOn(signUpNewsletterCheckbox);
     }
 
     public void clickRegisterButton() {
-        this.clickOn(this.registerButton);
+        clickOn(registerButton);
     }
 
 }

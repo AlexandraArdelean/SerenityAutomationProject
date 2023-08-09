@@ -20,25 +20,25 @@ public class CartPage extends BasePage {
     }
 
     public void clickBottomCheckoutButton() {
-        this.clickOn(this.bottomCheckoutButton);
+        clickOn(bottomCheckoutButton);
     }
 
-    public String getAttributeValueByName(final String attribute, final String productName) {
-        return this.findByName(productName)
+    public String getAttributeValueByName(String attribute, String productName) {
+        return findByName(productName)
                 .find(By.xpath(String.format("//dt[text() = '%s']/following-sibling::dd[1]", attribute)))
                 .getTextContent();
     }
 
-    public List<String> getAttributeValuesByName(final String attribute, final String productName) {
-        return this.findByName(productName)
+    public List<String> getAttributeValuesByName(String attribute, String productName) {
+        return findByName(productName)
                 .thenFindAll(By.xpath(String.format("//dt[text() = '%s']/following-sibling::dd", attribute)))
                 .stream()
                 .map(WebElementFacade::getTextContent)
                 .collect(Collectors.toList());
     }
 
-    private WebElementFacade findByName(final String productName) {
-        return this.itemsList
+    private WebElementFacade findByName(String productName) {
+        return itemsList
                 .stream()
                 .filter(el -> productName.equalsIgnoreCase(el.find(By.cssSelector("#shopping-cart-table tbody tr .product-name a")).getText()))
                 .findFirst()

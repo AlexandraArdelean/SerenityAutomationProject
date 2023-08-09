@@ -22,15 +22,15 @@ public class HomePage extends BasePage {
     private WebElementFacade welcomeTextParagraph;
 
     public void clickAccountLink() {
-        this.clickOn(this.accountLink);
+        clickOn(accountLink);
     }
 
     public void clickLoginLink() {
-        this.clickOn(this.loginLink);
+        clickOn(loginLink);
     }
 
     public void clickRegisterLink() {
-        this.clickOn(this.registerLink);
+        clickOn(registerLink);
     }
 
     public void searchForProduct(String productName) {
@@ -43,7 +43,7 @@ public class HomePage extends BasePage {
 
 
     public String getWelcomeTextUsername() {
-        return this.welcomeTextParagraph.getText()
+        return welcomeTextParagraph.getText()
                 .replaceAll("WELCOME, ", "")
                 .replaceAll("!", "");
     }

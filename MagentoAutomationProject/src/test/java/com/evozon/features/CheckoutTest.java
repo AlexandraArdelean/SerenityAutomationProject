@@ -6,20 +6,20 @@ import org.junit.Test;
 public class CheckoutTest extends BaseTest {
     @Test
     public void validCheckoutSimpleProductTest() {
-        this.loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASSWORD);
-        final String name = "SimpleTestProduct";
+        loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASSWORD);
+        String name = "SimpleTestProduct";
 
-        this.productsListSteps.searchAProduct(name);
-        this.productsListSteps.addSimpleProductToCart(name);
-        this.cartSteps.clickBottomCheckout();
+        productsListSteps.searchAProduct(name);
+        productsListSteps.addSimpleProductToCart(name);
+        cartSteps.clickBottomCheckout();
 
-        this.checkoutSteps.selectShipToSameAddress();
-        this.checkoutSteps.clickBillingContinue();
-        this.checkoutSteps.selectFreeShippingMethod();
-        this.checkoutSteps.clickShippingMethodContinue();
-        this.checkoutSteps.clickPaymentContinue();
-        this.checkoutSteps.clickReviewContinue();
-        this.orderConfirmationSteps.verifyOrderIsPlaced();
+        checkoutSteps.selectShipToSameAddress();
+        checkoutSteps.clickBillingContinue();
+        checkoutSteps.selectFreeShippingMethod();
+        checkoutSteps.clickShippingMethodContinue();
+        checkoutSteps.clickPaymentContinue();
+        checkoutSteps.clickReviewContinue();
+        orderConfirmationSteps.verifyOrderIsPlaced();
     }
 
 }
