@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
 public class WishlistTest extends BaseTest {
 
     private String product_name;
+
     @Test
     public void addTheProductToWishlist() {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASSWORD);
@@ -23,7 +24,7 @@ public class WishlistTest extends BaseTest {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASSWORD);
         accountSteps.addToWishlist(product_name);
         wishlistSteps.updateItemQtyInWishlist(product_name, 5);
-        wishlistSteps.verifyIfQuantityWasUpdated("5", product_name);
+        wishlistSteps.verifyIfQuantityWasUpdated(product_name, 5);
 
     }
 
