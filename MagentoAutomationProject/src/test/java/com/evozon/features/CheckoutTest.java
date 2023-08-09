@@ -12,7 +12,7 @@ public class CheckoutTest extends BaseTest {
         loginSteps.doLogin(Constants.USER_EMAIL, Constants.USER_PASSWORD);
         String name = "SimpleTestProduct";
 
-        productsListSteps.searchAProduct(name);
+        productsListSteps.searchForProduct(name);
         productsListSteps.addSimpleProductToCart(name);
         cartSteps.clickBottomCheckout();
 

@@ -11,7 +11,7 @@ public class SearchTest extends BaseTest{
     private String product_name;
     @Test
     public void validSearchTest(){
-        searchSteps.searchProduct(product_name);
+        searchSteps.executeSearch(product_name);
         searchSteps.verifyIfSearchedProductIsInList(product_name);
 
     }

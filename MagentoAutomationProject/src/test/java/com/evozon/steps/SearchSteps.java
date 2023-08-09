@@ -16,7 +16,7 @@ public class SearchSteps extends BaseSteps {
 
 
     @Step
-    public void searchProduct(String product) {
+    public void executeSearch(String product) {
         enterTextInSearchBar(product);
         clickOnSearch();
     }

@@ -10,14 +10,10 @@ import java.util.Arrays;
 
 @RunWith(SerenityRunner.class)
 public class ProductsListTest extends BaseTest {
-    @Test
-    public void checkIfProductIsAvailableTest() {
-        productsListSteps.searchAProduct(Constants.SIMPLE_PRODUCT);
-    }
 
     @Test
     public void verifySortByPriceAscendingTest() {
-        productsListSteps.searchAProduct(Constants.SIMPLE_PRODUCT);
+        productsListSteps.searchForProduct(Constants.SIMPLE_PRODUCT);
         productsListSteps.verifySortByPriceAscending();
     }
 
