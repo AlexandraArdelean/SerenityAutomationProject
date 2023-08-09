@@ -7,12 +7,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(SerenityParameterizedRunner.class)
-@UseTestDataFrom(value = "features/simple_products.csv")
-public class AddSimpleProductTest extends BaseTest {
+@UseTestDataFrom(value = "features/simple_virtual_products.csv")
+public class AddSimpleAndVirtualProductTest extends BaseTest {
     private String product_name;
 
     @Test
-    public void validAddSimpleProductToCart() {
+    public void validAddSimpleAndVirtualProductToCart() {
         productsListSteps.searchProduct(product_name);
         addToCartSteps.addSimpleProductToCart(product_name);
         cartSteps.verifyIsProductAddedToCart(product_name);
