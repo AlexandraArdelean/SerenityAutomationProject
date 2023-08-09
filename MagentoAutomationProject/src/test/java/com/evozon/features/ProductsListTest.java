@@ -30,6 +30,8 @@ public class ProductsListTest extends BaseTest {
         productDetailsSteps.selectSize(Constants.CONFIGURABLE_PRODUCT_SIZE);
         productDetailsSteps.clickAddToCart();
         cartSteps.verifyIsProductAddedToCart(Constants.CONFIGURABLE_PRODUCT);
+        cartSteps.verifySize(Constants.CONFIGURABLE_PRODUCT, Constants.CONFIGURABLE_PRODUCT_SIZE);
+        cartSteps.verifyColor(Constants.CONFIGURABLE_PRODUCT, Constants.CONFIGURABLE_PRODUCT_COLOR);
     }
 
     @Test
