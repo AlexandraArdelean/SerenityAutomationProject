@@ -1,6 +1,7 @@
 package com.evozon.steps;
 
 import net.thucydides.core.annotations.Step;
+import org.junit.Assert;
 
 public class SearchSteps extends BaseSteps {
     @Step
@@ -16,7 +17,13 @@ public class SearchSteps extends BaseSteps {
 
     @Step
     public void searchProduct(String product) {
-        homePage.setSearchText(product);
-        homePage.clickOnSearchIcon();
+        enterTextInSearchBar(product);
+        clickOnSearch();
+    }
+
+    @Step
+    public void verifyIfSearchedProductIsInList(String product) {
+        Assert.assertTrue(productsListPage.isProductInList(product));
+
     }
 }
