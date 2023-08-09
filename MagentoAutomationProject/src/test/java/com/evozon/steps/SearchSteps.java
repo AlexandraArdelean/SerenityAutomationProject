@@ -24,6 +24,5 @@ public class SearchSteps extends BaseSteps {
     @Step
     public void verifyIfSearchedProductIsInList(String product) {
         Assert.assertTrue(productsListPage.isProductInList(product));
-
     }
 }

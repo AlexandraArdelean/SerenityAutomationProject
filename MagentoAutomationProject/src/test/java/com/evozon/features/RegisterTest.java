@@ -27,6 +27,8 @@ public class RegisterTest extends BaseTest {
         accountInformationSteps.verifyIfFirstNameCorrect(firstName);
         accountInformationSteps.verifyIfLastNameCorrect(lastName);
         accountInformationSteps.verifyIfEmailCorrect(email);
+        accountSteps.clickNewsletterSubscriptions();
+        accountNewsletterSteps.verifyIfNewsletterButtonIsNotChecked();
     }
 
     @Test
