@@ -16,6 +16,7 @@ public class ProductsListSteps extends BaseSteps {
         homePage.clickOnSearchIcon();
     }
 
+
     @Step
     public void addSimpleProductToCart(String productName) {
         productsListPage.addToCartByName(productName);
