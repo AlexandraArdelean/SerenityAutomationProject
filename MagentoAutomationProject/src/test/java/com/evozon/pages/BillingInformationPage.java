@@ -15,7 +15,7 @@ public class BillingInformationPage extends BasePage {
     @FindBy(id = "billing:email")
     private WebElementFacade emailAddressField;
     @FindBy(id = "billing:street1")
-    private WebElementFacade addressField;
+    private WebElementFacade streetAddressField;
     @FindBy(id = "billing:street2")
     private WebElementFacade street2AddressField;
     @FindBy(id = "billing:city")
@@ -56,12 +56,46 @@ public class BillingInformationPage extends BasePage {
         typeInto(emailAddressField, emailAddress);
     }
 
-    public void setAddressField(String address) {
-        typeInto(addressField, address);
+    public void setStreetAddressField(String streetAddress) {
+        typeInto(streetAddressField, streetAddress);
     }
 
     public void setStreet2AddressField(String street) {
         typeInto(street2AddressField, street);
     }
+
+    public void setCityField(String city) {
+        typeInto(cityField, city);
+    }
+
+    public void selectStateFromDropDown(String state) {
+        stateDropDown.selectByVisibleText(state);
+    }
+
+    public void setPostalCodeField(String postalCode) {
+        typeInto(postalCodeField, postalCode);
+    }
+
+    public void selectCountryFromDropDown(String country) {
+        companyField.selectByVisibleText(country);
+
+    }
+
+    public void setTelephoneField(String telephone) {
+        typeInto(telephoneField, telephone);
+    }
+
+    public void setFaxField(String fax) {
+        typeInto(faxField, fax);
+    }
+
+    public void setShipToThisAddressRadioBtn() {
+        clickOn(shipToThisAddressField);
+    }
+
+    public void clickOnContinueButton() {
+        clickOn(continueBillingInfoButton);
+    }
+
 
 }

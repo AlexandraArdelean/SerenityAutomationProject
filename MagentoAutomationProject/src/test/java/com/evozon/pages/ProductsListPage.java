@@ -32,6 +32,10 @@ public class ProductsListPage extends BasePage {
         return null;
     }
 
+    public boolean isProductInList(String product) {
+        return findProductByName(product) != null;
+    }
+
     public void clickAddToWishlistBtn(String productName) {
         clickOn(findProductByName(productName).findElement(By.cssSelector(".link-wishlist")));
     }
@@ -45,9 +49,6 @@ public class ProductsListPage extends BasePage {
         clickOn(findProductByName(product).findElement(By.className("product-image")));
     }
 
-    public boolean isProductInList(String product) {
-        return findProductByName(product) != null;
-    }
 
     public void setSortByDropdown(String value) {
         sortByDropdown.selectByVisibleText(value);
