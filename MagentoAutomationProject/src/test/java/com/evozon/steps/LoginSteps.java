@@ -28,7 +28,7 @@ public class LoginSteps extends BaseSteps{
 
     @Step
     public void verifyUserIsLoggedIn(String userName){
-        Assert.assertTrue(accountPage.isUserLoggedIn(userName));
+        Assert.assertTrue(accountLinksPage.isUserLoggedIn(userName));
     }
 
 

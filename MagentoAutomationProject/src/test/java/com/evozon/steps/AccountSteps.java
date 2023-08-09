@@ -4,7 +4,6 @@ package com.evozon.steps;
 import net.thucydides.core.annotations.Step;
 
 
-
 public class AccountSteps extends BaseSteps {
     @Step
     public void goToMyAccount() {
@@ -14,7 +13,12 @@ public class AccountSteps extends BaseSteps {
 
     @Step
     public void clickAccountInformation() {
-        accountPage.clickAccountInformationLink();
+        accountLinksPage.clickAccountInformationLink();
+    }
+
+    @Step
+    public void clickNewsletterSubscriptions() {
+        accountLinksPage.clickNewsletterInformationLink();
     }
 
     @Step
