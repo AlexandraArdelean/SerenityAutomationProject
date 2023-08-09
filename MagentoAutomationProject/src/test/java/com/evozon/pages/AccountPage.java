@@ -1,19 +1,24 @@
 package com.evozon.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.WebElement;
 
 public class AccountPage extends BasePage {
-
     @FindBy(css = ".hello strong")
     private WebElementFacade welcomeTextParagraph;
+
+    @FindBy(xpath = "//a[text()='Account Information']")
+    private WebElementFacade accountInformationLink;
 
     @FindBy(id = "search")
     private WebElement searchBar;
     @FindBy(css = "[title='Search']")
     private WebElement magnifyingGlassButton;
+
+    public void clickAccountInformationLink() {
+        clickOn(accountInformationLink);
+    }
 
     public void verifyLoggedIn(String userName) {
         welcomeTextParagraph.shouldContainOnlyText("Hello, " + userName + "!");

@@ -7,12 +7,14 @@ public class HomePage extends BasePage {
     @FindBy(css = ".skip-account .label")
     private WebElementFacade accountLink;
 
+    @FindBy(css = ".skip-content a[title='My Account']")
+    private WebElementFacade myAccountLink;
+
     @FindBy(css = "a[title='Log In']")
     private WebElementFacade loginLink;
 
     @FindBy(css = "a[title='Register']")
     private WebElementFacade registerLink;
-
 
     @FindBy(id = "search")
     private WebElementFacade searchBar;
@@ -23,6 +25,10 @@ public class HomePage extends BasePage {
 
     public void clickAccountLink() {
         clickOn(accountLink);
+    }
+
+    public void clickMyAccountLink() {
+        clickOn(myAccountLink);
     }
 
     public void clickLoginLink() {

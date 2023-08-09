@@ -1,8 +1,6 @@
 package com.evozon.steps;
 
 import net.thucydides.core.annotations.Step;
-import org.hamcrest.Matchers;
-import org.junit.Assert;
 
 public class RegisterSteps extends BaseSteps {
     @Step
