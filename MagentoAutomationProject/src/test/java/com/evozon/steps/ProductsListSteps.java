@@ -1,6 +1,8 @@
 package com.evozon.steps;
 
+import com.evozon.utils.Categories;
 import net.thucydides.core.annotations.Step;
+import org.hamcrest.Matchers;
 import org.junit.Assert;
 
 public class ProductsListSteps extends BaseSteps {
@@ -43,5 +45,10 @@ public class ProductsListSteps extends BaseSteps {
     public void searchAndClickProductByName(String productName) {
         searchProduct(productName);
         clickOnProductByName(productName);
+    }
+
+    @Step
+    public void verifyPageTitleIsCorrect(String title) {
+        Assert.assertThat(productsListPage.getPageTitleHeadingText(), Matchers.equalToIgnoringCase(title));
     }
 }
