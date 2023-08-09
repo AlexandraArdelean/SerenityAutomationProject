@@ -15,6 +15,12 @@ public class ProductsListPage extends BasePage {
     @FindBy(css = ".category-products > .toolbar select[title='Sort By']")
     private WebElementFacade sortByDropdown;
 
+    @FindBy(css = ".page-title h1")
+    private WebElementFacade pageTitleHeading;
+
+    public String getPageTitleHeadingText() {
+        return pageTitleHeading.getText();
+    }
 
     public WebElementFacade findProductByName(String product) {
         Assert.assertNotNull(webElementFacadeList);

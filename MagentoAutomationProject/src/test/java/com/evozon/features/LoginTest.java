@@ -1,6 +1,5 @@
 package com.evozon.features;
 
-import com.evozon.utils.Constants;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.thucydides.junit.annotations.UseTestDataFrom;
 import org.junit.Test;
