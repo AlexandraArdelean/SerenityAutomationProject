@@ -31,6 +31,11 @@ public abstract class BaseTest {
 
     @Steps
     protected OrderConfirmationSteps orderConfirmationSteps;
+    @Steps
+    protected WishlistSteps wishlistSteps;
+
+    @Steps
+    protected AccountSteps accountSteps;
 
     @Before
     public void init() {
