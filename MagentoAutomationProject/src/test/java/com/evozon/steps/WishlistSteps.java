@@ -20,6 +20,7 @@ public class WishlistSteps extends BaseSteps {
     public void verifyIfQuantityWasUpdated(String name) {
         Assert.assertEquals("5", wishlistPage.getQuantity(name));
 
+
     }
 
     @Step

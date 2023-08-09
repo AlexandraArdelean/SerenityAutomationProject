@@ -11,6 +11,7 @@ public class ProductsListSteps extends BaseSteps {
         Assert.assertTrue(productsListPage.isProductInList(product));
     }
 
+
     @Step
     public void addSimpleProductToCart(String productName) {
         productsListPage.addToCartByName(productName);
