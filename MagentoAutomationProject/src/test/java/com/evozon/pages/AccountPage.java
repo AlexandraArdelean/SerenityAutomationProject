@@ -10,10 +10,6 @@ public class AccountPage extends BasePage {
     @FindBy(css = ".hello strong")
     private WebElementFacade welcomeTextParagraph;
 
-    @FindBy(id = "search")
-    private WebElement searchBar;
-    @FindBy(css = "[title='Search']")
-    private WebElement magnifyingGlassButton;
 
     public void verifyLoggedIn(String userName) {
         welcomeTextParagraph.shouldContainOnlyText("Hello, " + userName + "!");
@@ -27,11 +23,5 @@ public class AccountPage extends BasePage {
         return welcomeTextParagraph.getText();
     }
 
-    public void writeTextInSearchBar(String product) {
-        typeInto(searchBar, product);
-    }
 
-    public void clickOnSearch() {
-        clickOn(magnifyingGlassButton);
-    }
 }

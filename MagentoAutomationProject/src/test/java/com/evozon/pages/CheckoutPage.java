@@ -31,6 +31,20 @@ public class CheckoutPage extends BasePage {
     @FindBy(css = "#review-buttons-container button")
     private WebElementFacade reviewContinueButton;
 
+    @FindBy(id = "login:guest")
+    private WebElementFacade checkoutAsGuestRadioButton;
+    @FindBy(id = "onepage-guest-register-button")
+    private WebElementFacade continueCheckoutAsGuestBtn;
+
+    public void selectCheckoutAsGuestRadioBtn(){
+        clickOn(checkoutAsGuestRadioButton);
+    }
+
+    public void clickContinueCheckoutAsGuestButton(){
+        clickOn(continueCheckoutAsGuestBtn);
+    }
+
+
     public void setShipSameAddressRadioButton() {
         clickOn(shipSameAddressRadioButton);
     }
