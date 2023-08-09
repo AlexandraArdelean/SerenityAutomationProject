@@ -10,7 +10,7 @@ public class HomePageSteps extends BaseSteps {
 
     @Step
     public void goToSubcategory(String category, String subcategory) {
-        homePage.clickCategoryLinkByName(category);
+        homePage.hoverCategoryLinkByName(category);
         homePage.clickSubcategoryLinkByCategoryAndName(category, subcategory);
     }
 }
