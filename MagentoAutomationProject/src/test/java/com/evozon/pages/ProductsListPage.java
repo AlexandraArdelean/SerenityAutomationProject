@@ -15,7 +15,6 @@ public class ProductsListPage extends BasePage {
     @FindBy(css = ".category-products > .toolbar select[title='Sort By']")
     private WebElementFacade sortByDropdown;
 
-
     public WebElementFacade findProductByName(String product) {
         Assert.assertNotNull(webElementFacadeList);
         for (WebElementFacade element : webElementFacadeList) {
@@ -26,17 +25,8 @@ public class ProductsListPage extends BasePage {
         return null;
     }
 
-    public void clickAddToWishlistBtn(String productName) {
-        clickOn(findProductByName(productName).findElement(By.cssSelector(".link-wishlist")));
-    }
-
-
     public void addToCartByName(String product) {
-        clickOn(findProductByName(product).findElement(By.className("btn-cart")));
-    }
-
-    public void clickOnProductByName(final String product) {
-        clickOn(findProductByName(product).findElement(By.className("product-image")));
+        clickOn(findProductByName(product).findElement(By.cssSelector(".btn-cart")));
     }
 
     public boolean isProductInList(String product) {
