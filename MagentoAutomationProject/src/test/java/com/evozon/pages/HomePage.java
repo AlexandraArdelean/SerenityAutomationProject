@@ -68,12 +68,16 @@ public class HomePage extends BasePage {
                 .orElse(null);
     }
 
-    public void clickCategoryLinkByName(String categoryName) {
+    public void hoverCategoryLinkByName(String categoryName) {
         withAction().moveToElement(findCategoryLinkByName(categoryName)).perform();
     }
 
+    public void clickCategoryLinkByName(String categoryName) {
+        clickOn(findCategoryLinkByName(categoryName).findElement(By.cssSelector("a.level0")));
+    }
+
     public void clickSubcategoryLinkByCategoryAndName(String categoryName, String subcategoryName) {
-        findSubcategoryLinkByCategoryAndName(categoryName, subcategoryName).click();
+        clickOn(findSubcategoryLinkByCategoryAndName(categoryName, subcategoryName));
     }
 
 
