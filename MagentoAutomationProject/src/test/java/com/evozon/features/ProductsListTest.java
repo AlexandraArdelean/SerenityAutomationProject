@@ -1,12 +1,13 @@
 package com.evozon.features;
 
+import com.evozon.utils.Constants;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class ProductsListTest extends BaseTest {
     @Test
     public void checkIfProductIsAvailableTest() {
-        productsListSteps.searchAProduct("PEARL STUD EARRINGS");
+        productsListSteps.searchAProduct(Constants.SIMPLE_PRODUCT);
     }
 
     @Test
