@@ -35,7 +35,7 @@ public class ProductsListPage extends BasePage {
         clickOn(findProductByName(product).findElement(By.className("btn-cart")));
     }
 
-    public void clickOnProductByName(final String product) {
+    public void clickOnProductByName(String product) {
         clickOn(findProductByName(product).findElement(By.className("product-image")));
     }
 

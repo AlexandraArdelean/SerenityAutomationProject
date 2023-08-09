@@ -16,16 +16,16 @@ public class ProductDetailsPage extends BasePage {
     @FindBy(css = "#downloadable-links-list li")
     private List<WebElementFacade> linksList;
 
-    public void selectColourOption(final String colourName) {
-        this.colourOptionsList
+    public void selectColourOption(String colourName) {
+        colourOptionsList
                 .stream()
                 .filter(el -> colourName.equalsIgnoreCase(el.getAttribute("name")))
                 .findFirst()
                 .ifPresent(this::clickOn);
     }
 
-    public void selectSizeOption(final String sizeName) {
-        this.sizeOptionsList
+    public void selectSizeOption(String sizeName) {
+        sizeOptionsList
                 .stream()
                 .filter(el -> sizeName.equalsIgnoreCase(el.getAttribute("name")))
                 .findFirst()
@@ -33,15 +33,15 @@ public class ProductDetailsPage extends BasePage {
     }
 
     public void clickAddToCartButton() {
-        this.addToCartButton.click();
+        addToCartButton.click();
     }
 
-    public void selectLinkByTitle(final String title) {
-        this.linksList
+    public void selectLinkByTitle(String title) {
+        linksList
                 .stream()
 //                .peek(el -> System.out.println(el.findElement(By.tagName("label")).getText()))
                 .filter(el -> el.findElement(By.tagName("label")).getText().equalsIgnoreCase(title))
                 .findFirst()
-                .ifPresent(el -> this.clickOn(el.findElement(By.tagName("input"))));
+                .ifPresent(el -> clickOn(el.findElement(By.tagName("input"))));
     }
 }

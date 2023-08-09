@@ -1,16 +1,24 @@
 package com.evozon.features;
 
 import com.evozon.utils.Constants;
+import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
+import net.thucydides.junit.annotations.UseTestDataFrom;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
-public class LoginTest extends BaseTest{
+@RunWith(SerenityParameterizedRunner.class)
+@UseTestDataFrom(value = "features/login.csv")
+public class LoginTest extends BaseTest {
+    private String email_address;
+    private String password;
+    private String username;
 
     @Test
-    public void validLoginTest(){
+    public void validLoginTest() {
         loginSteps.navigateToLoginPage();
-        loginSteps.enterEmailAddress(Constants.USER_EMAIL);
-        loginSteps.enterPassword(Constants.USER_PASSWORD);
+        loginSteps.enterEmailAddress(email_address);
+        loginSteps.enterPassword(password);
         loginSteps.clickLogin();
-        loginSteps.verifyUserIsLoggedIn(Constants.USER_NAME);
+        loginSteps.verifyUserIsLoggedIn(username);
     }
 }

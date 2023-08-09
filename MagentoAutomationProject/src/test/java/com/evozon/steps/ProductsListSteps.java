@@ -5,13 +5,13 @@ import org.junit.Assert;
 
 public class ProductsListSteps extends BaseSteps {
     @Step
-    public void searchAProduct(final String product) {
+    public void searchAProduct(String product) {
         searchProduct(product);
         Assert.assertTrue(productsListPage.isProductInList(product));
     }
 
     @Step
-    public void searchProduct(final String product) {
+    public void searchProduct(String product) {
         homePage.searchForProduct(product);
         homePage.clickOnSearchIcon();
     }
@@ -22,7 +22,7 @@ public class ProductsListSteps extends BaseSteps {
     }
 
     @Step
-    public void clickOnProductByName(final String productName) {
+    public void clickOnProductByName(String productName) {
         productsListPage.clickOnProductByName(productName);
     }
 
@@ -39,8 +39,8 @@ public class ProductsListSteps extends BaseSteps {
 
 
     @Step
-    public void searchAndClickProductByName(final String productName) {
-        this.searchProduct(productName);
-        this.clickOnProductByName(productName);
+    public void searchAndClickProductByName(String productName) {
+        searchProduct(productName);
+        clickOnProductByName(productName);
     }
 }

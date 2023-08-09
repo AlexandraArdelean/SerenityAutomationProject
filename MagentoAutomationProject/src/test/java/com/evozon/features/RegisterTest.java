@@ -6,20 +6,20 @@ import org.junit.Test;
 public class RegisterTest extends BaseTest {
     @Test
     public void validRegisterTest() {
-        final Faker faker = new Faker();
-        final String firstName = faker.name().firstName();
-        final String middleName = faker.name().nameWithMiddle();
-        final String lastName = faker.name().lastName();
-        final String password = faker.internet().password(6, 20);
-        this.registerSteps.navigateToRegisterPage();
-        this.registerSteps.enterFirstName(firstName);
-        this.registerSteps.enterMiddleName(middleName);
-        this.registerSteps.enterLastName(lastName);
-        this.registerSteps.enterEmailAddress(faker.internet().emailAddress());
-        this.registerSteps.enterPassword(password);
-        this.registerSteps.enterConfirmPassword(password);
-        this.registerSteps.signUpForNewsletter();
-        this.registerSteps.clickRegister();
-        this.registerSteps.verifyUserIsRegistered(String.format("%s %s %s", firstName, middleName, lastName));
+        Faker faker = new Faker();
+        String firstName = faker.name().firstName();
+        String middleName = faker.name().nameWithMiddle();
+        String lastName = faker.name().lastName();
+        String password = faker.internet().password(6, 20);
+        registerSteps.navigateToRegisterPage();
+        registerSteps.enterFirstName(firstName);
+        registerSteps.enterMiddleName(middleName);
+        registerSteps.enterLastName(lastName);
+        registerSteps.enterEmailAddress(faker.internet().emailAddress());
+        registerSteps.enterPassword(password);
+        registerSteps.enterConfirmPassword(password);
+        registerSteps.signUpForNewsletter();
+        registerSteps.clickRegister();
+        registerSteps.verifyUserIsRegistered(String.format("%s %s %s", firstName, middleName, lastName));
     }
 }

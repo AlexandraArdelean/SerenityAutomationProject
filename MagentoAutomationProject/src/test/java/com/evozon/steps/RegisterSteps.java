@@ -7,52 +7,52 @@ import org.junit.Assert;
 public class RegisterSteps extends BaseSteps {
     @Step
     public void navigateToRegisterPage() {
-        this.homePage.clickAccountLink();
-        this.homePage.clickRegisterLink();
+        homePage.clickAccountLink();
+        homePage.clickRegisterLink();
     }
 
     @Step
-    public void enterFirstName(final String firstName) {
-        this.registerPage.setFirstNameInput(firstName);
+    public void enterFirstName(String firstName) {
+        registerPage.setFirstNameInput(firstName);
     }
 
     @Step
-    public void enterMiddleName(final String middleName) {
-        this.registerPage.setMiddleNameInput(middleName);
+    public void enterMiddleName(String middleName) {
+        registerPage.setMiddleNameInput(middleName);
     }
 
     @Step
-    public void enterLastName(final String lastName) {
-        this.registerPage.setLastNameInput(lastName);
+    public void enterLastName(String lastName) {
+        registerPage.setLastNameInput(lastName);
     }
 
     @Step
-    public void enterEmailAddress(final String email) {
-        this.registerPage.setEmailInput(email);
+    public void enterEmailAddress(String email) {
+        registerPage.setEmailInput(email);
     }
 
     @Step
-    public void enterPassword(final String password) {
-        this.registerPage.setPasswordInput(password);
+    public void enterPassword(String password) {
+        registerPage.setPasswordInput(password);
     }
 
     @Step
-    public void enterConfirmPassword(final String password) {
-        this.registerPage.setConfirmPasswordInput(password);
+    public void enterConfirmPassword(String password) {
+        registerPage.setConfirmPasswordInput(password);
     }
 
     @Step
     public void signUpForNewsletter() {
-        this.registerPage.setSignUpNewsletterCheckbox();
+        registerPage.setSignUpNewsletterCheckbox();
     }
 
     @Step
     public void clickRegister() {
-        this.registerPage.clickRegisterButton();
+        registerPage.clickRegisterButton();
     }
 
     @Step
-    public void verifyUserIsRegistered(final String username) {
-       // Assert.assertThat(this.homePage.getWelcomeTextUsername(), Matchers.equalToIgnoringCase(username));
+    public void verifyUserIsRegistered(String username) {
+        // Assert.assertThat(homePage.getWelcomeTextUsername(), Matchers.equalToIgnoringCase(username));
     }
 }

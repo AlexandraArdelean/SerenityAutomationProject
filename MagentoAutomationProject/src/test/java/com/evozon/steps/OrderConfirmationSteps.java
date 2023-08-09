@@ -7,7 +7,7 @@ import org.junit.Assert;
 public class OrderConfirmationSteps extends BaseSteps {
     @Step
     public void verifyOrderIsPlaced() {
-        Assert.assertThat(this.orderConfirmationPage.getConfirmationSubtitleTextHeading(), Matchers.equalToIgnoringCase("Thank you for your purchase!"));
+        Assert.assertThat(orderConfirmationPage.getConfirmationSubtitleTextHeading(), Matchers.equalToIgnoringCase("Thank you for your purchase!"));
     }
 
 }

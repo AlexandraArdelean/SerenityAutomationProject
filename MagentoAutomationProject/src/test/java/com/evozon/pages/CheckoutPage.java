@@ -32,38 +32,38 @@ public class CheckoutPage extends BasePage {
     private WebElementFacade reviewContinueButton;
 
     public void setShipSameAddressRadioButton() {
-        this.clickOn(this.shipSameAddressRadioButton);
+        clickOn(shipSameAddressRadioButton);
     }
 
     public void setShipDifferentAddressRadioButton() {
-        this.clickOn(this.shipDifferentAddressRadioButton);
+        clickOn(shipDifferentAddressRadioButton);
     }
 
     public void clickBillingContinueButton() {
-        this.clickOn(this.billingContinueButton);
+        clickOn(billingContinueButton);
     }
 
     public void clickShippingContinueButton() {
-        this.clickOn(this.shippingContinueButton);
+        clickOn(shippingContinueButton);
     }
 
     public void setFreeShippingMethodRadioButton() {
-        this.clickOn(this.freeShippingMethodRadioButton);
+        clickOn(freeShippingMethodRadioButton);
     }
 
     public void setFlatRateShippingMethodRadioButton() {
-        this.clickOn(this.flatRateShippingMethodRadioButton);
+        clickOn(flatRateShippingMethodRadioButton);
     }
 
     public void clickShippingMethodContinueButton() {
-        this.clickOn(this.shippingMethodContinueButton);
+        clickOn(shippingMethodContinueButton);
     }
 
     public void clickPaymentContinueButton() {
-        this.clickOn(this.paymentContinueButton);
+        clickOn(paymentContinueButton);
     }
 
     public void clickReviewContinueButton() {
-        this.clickOn(this.reviewContinueButton);
+        clickOn(reviewContinueButton);
     }
 }

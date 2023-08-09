@@ -8,6 +8,6 @@ public class OrderConfirmationPage extends BasePage {
     private WebElementFacade confirmationSubtitleTextHeading;
 
     public String getConfirmationSubtitleTextHeading() {
-        return this.waitFor(this.confirmationSubtitleTextHeading).getText();
+        return waitFor(confirmationSubtitleTextHeading).getText();
     }
 }
