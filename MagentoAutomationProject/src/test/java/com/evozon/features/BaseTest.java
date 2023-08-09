@@ -47,6 +47,9 @@ public abstract class BaseTest {
     @Steps
     protected AccountNewsletterSteps accountNewsletterSteps;
 
+    @Steps
+    protected SearchSteps searchSteps;
+
     @Before
     public void init() {
         driver.manage().window().maximize();

@@ -16,16 +16,6 @@ public class ProductsListPage extends BasePage {
     private WebElementFacade sortByDropdown;
 
 
-    public WebElementFacade findProductByName(String product) {
-        Assert.assertNotNull(webElementFacadeList);
-        for (WebElementFacade element : webElementFacadeList) {
-            if (element.findElement(By.cssSelector(".product-name")).getText().equalsIgnoreCase(product)) {
-                return element;
-            }
-        }
-        return null;
-    }
-
     public boolean isProductInList(String product) {
         return findProductByName(product) != null;
     }
@@ -60,6 +50,16 @@ public class ProductsListPage extends BasePage {
     private double getPriceFromProduct(WebElement webElement) {
         return Double.parseDouble(webElement.findElement(By.cssSelector(".price")).
                 getText().substring(1));
+    }
+
+    private WebElementFacade findProductByName(String product) {
+        Assert.assertNotNull(webElementFacadeList);
+        for (WebElementFacade element : webElementFacadeList) {
+            if (element.findElement(By.cssSelector(".product-name")).getText().equalsIgnoreCase(product)) {
+                return element;
+            }
+        }
+        return null;
     }
 
 

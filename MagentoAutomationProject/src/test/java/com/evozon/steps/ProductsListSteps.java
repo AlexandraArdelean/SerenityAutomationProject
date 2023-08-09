@@ -7,15 +7,10 @@ public class ProductsListSteps extends BaseSteps {
     @Step
     public void
     searchAProduct(String product) {
-        searchProduct(product);
+        homePage.setSearchText(product);
         Assert.assertTrue(productsListPage.isProductInList(product));
     }
 
-    @Step
-    public void searchProduct(String product) {
-        homePage.searchForProduct(product);
-        homePage.clickOnSearchIcon();
-    }
 
     @Step
     public void addSimpleProductToCart(String productName) {
@@ -41,7 +36,7 @@ public class ProductsListSteps extends BaseSteps {
 
     @Step
     public void searchAndClickProductByName(String productName) {
-        searchProduct(productName);
+        homePage.setSearchText(productName);
         clickOnProductByName(productName);
     }
 }

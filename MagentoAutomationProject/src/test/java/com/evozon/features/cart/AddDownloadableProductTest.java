@@ -17,7 +17,7 @@ public class AddDownloadableProductTest extends BaseTest {
 
     @Test
     public void validAddDownloadableProductToCart() {
-        productsListSteps.searchProduct(product_name);
+        searchSteps.searchProduct(product_name);
         productsListSteps.clickOnProductByName(product_name);
         Arrays.stream(links.split(","))
                 .forEach(productDetailsSteps::selectLinkByTitle);

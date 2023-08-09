@@ -39,8 +39,8 @@ public class HomePage extends BasePage {
         clickOn(registerLink);
     }
 
-    public void searchForProduct(String productName) {
-        typeInto(searchBar, productName);
+    public void setSearchText(String text) {
+        typeInto(searchBar, text);
     }
 
     public void clickOnSearchIcon() {

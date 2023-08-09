@@ -13,7 +13,7 @@ public class AddSimpleAndVirtualProductTest extends BaseTest {
 
     @Test
     public void validAddSimpleAndVirtualProductToCart() {
-        productsListSteps.searchProduct(product_name);
+        searchSteps.searchProduct(product_name);
         addToCartSteps.addSimpleProductToCart(product_name);
         cartSteps.verifyIsProductAddedToCart(product_name);
     }

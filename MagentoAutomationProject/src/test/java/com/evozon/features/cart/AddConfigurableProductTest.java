@@ -17,7 +17,7 @@ public class AddConfigurableProductTest extends BaseTest {
 
     @Test
     public void validAddConfigurableProductToCart() {
-        productsListSteps.searchProduct(product_name);
+        searchSteps.searchProduct(product_name);
         productsListSteps.clickOnProductByName(product_name);
         productDetailsSteps.selectColour(color);
         productDetailsSteps.selectSize(size);
