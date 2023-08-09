@@ -5,7 +5,8 @@ import org.junit.Assert;
 
 public class ProductsListSteps extends BaseSteps {
     @Step
-    public void searchAProduct(String product) {
+    public void
+    searchAProduct(String product) {
         searchProduct(product);
         Assert.assertTrue(productsListPage.isProductInList(product));
     }

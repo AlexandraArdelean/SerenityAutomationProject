@@ -32,11 +32,5 @@ public class AccountPage extends BasePage {
         return welcomeTextParagraph.getText();
     }
 
-    public void writeTextInSearchBar(String product) {
-        typeInto(searchBar, product);
-    }
 
-    public void clickOnSearch() {
-        clickOn(magnifyingGlassButton);
-    }
 }
