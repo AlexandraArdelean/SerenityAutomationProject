@@ -5,10 +5,15 @@ import org.junit.Assert;
 
 public class ProductsListSteps extends BaseSteps {
     @Step
-    public void searchAProduct(String product) {
+    public void searchAProduct(final String product) {
+        searchProduct(product);
+        Assert.assertTrue(productsListPage.isProductInList(product));
+    }
+
+    @Step
+    public void searchProduct(final String product) {
         homePage.searchForProduct(product);
         homePage.clickOnSearchIcon();
-        Assert.assertTrue(productsListPage.isProductInList(product));
     }
 
     @Step
@@ -17,8 +22,8 @@ public class ProductsListSteps extends BaseSteps {
     }
 
     @Step
-    public void verifyIsProductAddedToCart() {
-        Assert.assertEquals("Swing Time Earrings was added to your shopping cart.", cartPage.getAddToCartMessage());
+    public void clickOnProductByName(final String productName) {
+        productsListPage.clickOnProductByName(productName);
     }
 
     @Step
@@ -33,4 +38,9 @@ public class ProductsListSteps extends BaseSteps {
     }
 
 
+    @Step
+    public void searchAndClickProductByName(final String productName) {
+        this.searchProduct(productName);
+        this.clickOnProductByName(productName);
+    }
 }
