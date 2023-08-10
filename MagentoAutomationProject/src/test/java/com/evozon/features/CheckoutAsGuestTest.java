@@ -1,24 +1,21 @@
 package com.evozon.features;
 
-import com.evozon.utils.Constants;
 import com.evozon.utils.Customer;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
-import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.junit.annotations.UseTestDataFrom;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-//@RunWith(SerenityParameterizedRunner.class)
-//@UseTestDataFrom(value = "features/simple_products.csv")
-@RunWith(SerenityRunner.class)
+@RunWith(SerenityParameterizedRunner.class)
+@UseTestDataFrom(value = "features/simple_products.csv")
 public class CheckoutAsGuestTest extends BaseTest {
     private String productName;
 
-
+    //TODO
     @Test
     public void checkOutAsGuestTest() {
-        searchSteps.executeSearch(Constants.SIMPLE_PRODUCT);
-        productsListSteps.addSimpleProductToCart(Constants.SIMPLE_PRODUCT);
+        searchSteps.executeSearch(productName);
+        productsListSteps.addSimpleProductToCart(productName);
         cartSteps.clickBottomCheckout();
         checkoutAsGuestSteps.selectCheckoutAsGuest();
         checkoutAsGuestSteps.clickContinueButton();
@@ -38,7 +35,8 @@ public class CheckoutAsGuestTest extends BaseTest {
         checkoutAsGuestSteps.selectShipToDifferentAddress();
         checkoutAsGuestSteps.clickContinueToShipping();
         checkoutAsGuestSteps.clickUseBillingAddress();
-        checkoutAsGuestSteps.selectFixedShippingRate();
+        checkoutAsGuestSteps.clickShippingMethodContinue();
+//        checkoutAsGuestSteps.selectFixedShippingRate();
         checkoutAsGuestSteps.clickContinueToPayment();
         checkoutAsGuestSteps.clickContinueToOrderReview();
         checkoutAsGuestSteps.clickOnPlaceOrder();

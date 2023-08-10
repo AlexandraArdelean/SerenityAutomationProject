@@ -14,12 +14,14 @@ public class ShippingMethodPage extends BasePage {
     private WebElementFacade continueShippingButton;
 
     public void clickOnFixedFlatRateButton() {
-        withTimeoutOf(Duration.ofSeconds(30)).find(By.id("s_method_flatrate_flatrate")).isEnabled();
+        withTimeoutOf(Duration.ofSeconds(100)).find(By.id("s_method_flatrate_flatrate")).isEnabled();
         clickOn(fixedShippingRadioButton);
     }
 
     public void clickContinue() {
-        clickOn(continueShippingButton);
+        withTimeoutOf(Duration.ofSeconds(100)).waitFor(continueShippingButton).click();
+//        waitFor(continueShippingButton);
+//        clickOn(continueShippingButton);
     }
 
 }

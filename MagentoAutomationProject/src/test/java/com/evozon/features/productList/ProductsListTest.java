@@ -3,7 +3,6 @@ package com.evozon.features.productList;
 import com.evozon.features.BaseTest;
 import com.evozon.utils.Constants;
 import net.serenitybdd.junit.runners.SerenityRunner;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -11,9 +10,32 @@ import org.junit.runner.RunWith;
 public class ProductsListTest extends BaseTest {
 
     @Test
-//    @Ignore
     public void verifySortByPriceAscendingTest() {
-        searchSteps.executeSearch(Constants.SIMPLE_PRODUCT);
-        productsListSteps.verifySortByPriceAscending();
+        searchSteps.executeSearch(Constants.SORT_KEYWORD);
+        productsListSteps.setSortByPrice();
+        productsListSteps.verifyIfSortedByPriceAscending();
+    }
+
+    @Test
+    public void verifySortByPriceDescendingTest() {
+        searchSteps.executeSearch(Constants.SORT_KEYWORD);
+        productsListSteps.setSortByPrice();
+        productsListSteps.changeSortOrder();
+        productsListSteps.verifyIfSortedByPriceDescending();
+    }
+
+    @Test
+    public void verifySortByNameAscendingTest() {
+        searchSteps.executeSearch(Constants.SORT_KEYWORD);
+        productsListSteps.setSortByName();
+        productsListSteps.verifyIfSortedByNameAscending();
+    }
+
+    @Test
+    public void verifySortByNameDescendingTest() {
+        searchSteps.executeSearch(Constants.SORT_KEYWORD);
+        productsListSteps.setSortByName();
+        productsListSteps.changeSortOrder();
+        productsListSteps.verifyIfSortedByNameDescending();
     }
 }
