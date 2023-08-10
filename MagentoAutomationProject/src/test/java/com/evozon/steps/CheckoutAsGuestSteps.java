@@ -1,8 +1,22 @@
 package com.evozon.steps;
 
+
 import net.thucydides.core.annotations.Step;
 
-public class BillingInformationSteps extends BaseSteps {
+public class CheckoutAsGuestSteps extends BaseSteps {
+
+
+
+    @Step
+    public void selectCheckoutAsGuest() {
+        checkoutPage.selectCheckoutAsGuestRadioBtn();
+    }
+
+    @Step
+    public void clickContinueButton() {
+        checkoutPage.clickContinueCheckoutAsGuestButton();
+    }
+
     @Step
     public void enterFirstName(String firstName) {
         billingInformationPage.setFirstNameField(firstName);
@@ -19,23 +33,23 @@ public class BillingInformationSteps extends BaseSteps {
     }
 
     @Step
-    public void enterCompanyName(String company) {
+    public void enterCompany(String company) {
         billingInformationPage.setCompanyField(company);
     }
 
     @Step
-    public void enterEmailAddress(String emailAddress) {
-        billingInformationPage.setEmailAddressField(emailAddress);
+    public void enterEmailAddress(String email) {
+        billingInformationPage.setEmailAddressField(email);
     }
 
     @Step
-    public void enterStreet1Address(String street1Address) {
-        billingInformationPage.setStreetAddressField(street1Address);
+    public void enterStreetAddress1(String streetAddress) {
+        billingInformationPage.setStreetAddressField(streetAddress);
     }
 
     @Step
-    public void enterStreet2Address(String street2Address) {
-        billingInformationPage.setStreet2AddressField(street2Address);
+    public void enterStreetAddress2(String streetAddress) {
+        billingInformationPage.setStreet2AddressField(streetAddress);
     }
 
     @Step
@@ -59,7 +73,7 @@ public class BillingInformationSteps extends BaseSteps {
     }
 
     @Step
-    public void enterTelephoneNumber(String telephone) {
+    public void enterTelephone(String telephone) {
         billingInformationPage.setTelephoneField(telephone);
     }
 
@@ -69,12 +83,39 @@ public class BillingInformationSteps extends BaseSteps {
     }
 
     @Step
-    public void selectShipToThisAddressRadioBtn() {
+    public void selectShipToDifferentAddress() {
         billingInformationPage.setShipToDifferentAddress();
     }
 
     @Step
-    public void clickContinueButton() {
+    public void clickContinueToShipping() {
         billingInformationPage.clickOnContinueButton();
     }
+
+    @Step
+    public void clickUseBillingAddress() {
+        shippingInformationPage.selectUseBillingAddress();
+    }
+
+    @Step
+    public void selectFixedShippingRate() {
+        shippingMethodPage.clickOnFixedFlatRateButton();
+    }
+
+    @Step
+    public void clickContinueToPayment() {
+        shippingMethodPage.clickContinue();
+    }
+
+    @Step
+    public void clickContinueToOrderReview() {
+        paymentInformationPage.clickOnContinueButton();
+    }
+
+    @Step
+    public void clickOnPlaceOrder() {
+        orderPreviewPage.clickOnPlaceOrderButton();
+    }
+
+
 }

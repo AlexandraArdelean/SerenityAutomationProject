@@ -2,6 +2,7 @@ package com.evozon.features;
 
 import com.evozon.steps.*;
 import com.evozon.utils.Constants;
+import com.evozon.utils.Customer;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Before;
@@ -55,6 +56,13 @@ public abstract class BaseTest {
 
     @Steps
     protected ProductListAndDetailsStep productListAndDetailsStep;
+
+    @Steps
+    protected CheckoutAsGuestSteps checkoutAsGuestSteps;
+
+    Customer customer = new Customer("Ana", "Maria", "Pop", "ASDF", "ana@gmail.com",
+            "Asdfg 1/55", "ASFGHT 55/1", "Baia Mare", "Maramureş", "525893",
+            "Romania", "1457896529", "45987");
 
     @Before
     public void init() {
