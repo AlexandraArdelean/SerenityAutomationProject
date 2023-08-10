@@ -5,7 +5,7 @@ import org.junit.Assert;
 
 public class LoginSteps extends BaseSteps{
     @Step
-    public void navigateToLoginPage(){
+    public void goToLoginPage(){
         homePage.clickAccountLink();
         homePage.clickLoginLink();
     }
@@ -34,7 +34,7 @@ public class LoginSteps extends BaseSteps{
 
     @Step
     public void doLogin(String userEmail, String password){
-        navigateToLoginPage();
+        goToLoginPage();
         enterEmailAddress(userEmail);
         enterPassword(password);
         clickLogin();

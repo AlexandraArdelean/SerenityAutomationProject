@@ -15,7 +15,7 @@ public class RegisterTest extends BaseTest {
         String lastName = faker.name().lastName();
         String email = faker.internet().emailAddress();
         String password = faker.internet().password(6, 20);
-        registerSteps.navigateToRegisterPage();
+        registerSteps.goToRegisterPage();
         registerSteps.enterFirstName(firstName);
         registerSteps.enterLastName(lastName);
         registerSteps.enterEmailAddress(email);
@@ -38,7 +38,7 @@ public class RegisterTest extends BaseTest {
         String lastName = faker.name().lastName();
         String email = faker.internet().emailAddress();
         String password = faker.internet().password(6, 20);
-        registerSteps.navigateToRegisterPage();
+        registerSteps.goToRegisterPage();
         registerSteps.enterFirstName(firstName);
         registerSteps.enterMiddleName(middleName);
         registerSteps.enterLastName(lastName);

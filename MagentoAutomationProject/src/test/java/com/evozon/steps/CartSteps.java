@@ -4,6 +4,8 @@ import net.thucydides.core.annotations.Step;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 
+import java.util.List;
+
 public class CartSteps extends BaseSteps {
     @Step
     public void clickBottomCheckout() {
@@ -26,7 +28,15 @@ public class CartSteps extends BaseSteps {
     }
 
     @Step
-    public void verifyLinks(String productName, String link) {
-//        Assert.assertThat(this.cartPage.getAttributeValuesByName("Links", productName), Matchers.containsStringIgnoringCase(link));
+    public void verifyLinks(String productName, List<String> links) {
+        List<String> actualLinks = cartPage.getAttributeValuesByName("Links", productName);
+        links.forEach(System.out::println);
+        Assert.assertTrue(links
+                .stream()
+                .allMatch(link -> actualLinks
+                        .stream()
+                        .peek(actual -> System.out.println(actual + "<->" + link))
+                        .anyMatch(actualLink -> actualLink.equalsIgnoreCase(link))));
+
     }
 }

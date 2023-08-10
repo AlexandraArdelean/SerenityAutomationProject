@@ -7,13 +7,6 @@ import org.junit.Assert;
 
 public class ProductsListSteps extends BaseSteps {
     @Step
-    public void searchForProduct(String product) {
-        homePage.setSearchText(product);
-        Assert.assertTrue(productsListPage.isProductInList(product));
-    }
-
-
-    @Step
     public void addSimpleProductToCart(String productName) {
         productsListPage.addToCartByName(productName);
     }

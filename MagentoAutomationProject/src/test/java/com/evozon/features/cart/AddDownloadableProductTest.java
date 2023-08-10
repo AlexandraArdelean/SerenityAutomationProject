@@ -7,6 +7,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom(value = "features/downloadable_products.csv")
@@ -19,9 +21,10 @@ public class AddDownloadableProductTest extends BaseTest {
     public void validAddDownloadableProductToCart() {
         searchSteps.executeSearch(product_name);
         productsListSteps.clickOnProductByName(product_name);
-        Arrays.stream(links.split(","))
-                .forEach(productDetailsSteps::selectLinkByTitle);
+        List<String> linkList = List.of(links.split(","));
+        productDetailsSteps.selectLinksByTitle(linkList);
         productDetailsSteps.clickAddToCart();
         cartSteps.verifyIsProductAddedToCart(product_name);
+        cartSteps.verifyLinks(product_name, linkList);
     }
 }

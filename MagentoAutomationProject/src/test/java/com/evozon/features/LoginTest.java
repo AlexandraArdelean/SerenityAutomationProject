@@ -8,14 +8,14 @@ import org.junit.runner.RunWith;
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom(value = "features/login.csv")
 public class LoginTest extends BaseTest {
-    private String email_address;
+    private String emailAddress;
     private String password;
     private String username;
 
     @Test
     public void validLoginTest() {
-        loginSteps.navigateToLoginPage();
-        loginSteps.enterEmailAddress(email_address);
+        loginSteps.goToLoginPage();
+        loginSteps.enterEmailAddress(emailAddress);
         loginSteps.enterPassword(password);
         loginSteps.clickLogin();
         loginSteps.verifyUserIsLoggedIn(username);

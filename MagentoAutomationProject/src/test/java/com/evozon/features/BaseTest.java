@@ -53,7 +53,6 @@ public abstract class BaseTest {
     @Steps
     protected HomePageSteps homePageSteps;
 
-
     @Steps
     protected ProductListAndDetailsStep productListAndDetailsStep;
 

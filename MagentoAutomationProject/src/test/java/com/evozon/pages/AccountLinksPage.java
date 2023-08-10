@@ -21,17 +21,7 @@ public class AccountLinksPage extends BasePage {
         clickOn(newsletterSubscriptionsLink);
     }
 
-    public void verifyLoggedIn(String userName) {
-        welcomeTextParagraph.shouldContainOnlyText("Hello, " + userName + "!");
-    }
-
     public boolean isUserLoggedIn(String userName) {
         return welcomeTextParagraph.containsOnlyText("Hello, " + userName + "!");
     }
-
-    public String getUserLoggedInMessage() {
-        return welcomeTextParagraph.getText();
-    }
-
-
 }

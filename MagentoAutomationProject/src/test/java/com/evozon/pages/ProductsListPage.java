@@ -30,7 +30,7 @@ public class ProductsListPage extends BasePage {
     }
 
     public void refreshProductList() {
-        this.getDriver().navigate().refresh();
+        getDriver().navigate().refresh();
     }
 
     public boolean isProductInList(String product) {
@@ -42,7 +42,7 @@ public class ProductsListPage extends BasePage {
     }
 
     public List<String> getProductLinksList() {
-        return this.productsList.stream()
+        return productsList.stream()
                 .map(el -> el.find(By.className("product-image")).getAttribute("href"))
                 .toList();
     }

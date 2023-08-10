@@ -12,4 +12,5 @@ public class Constants {
     public static final String VIRTUAL_PRODUCT = "VirtualTestProduct";
     public static final String DOWNLOADABLE_PRODUCT = "DownloadableTestProduct";
     public static final String DOWNLOADABLE_PRODUCT_OPTION = "Title1";
+    public static final Integer WISHLIST_QUANTITY = 2;
 }

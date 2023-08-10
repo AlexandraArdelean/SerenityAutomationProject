@@ -51,7 +51,7 @@ public class ProductDetailsPage extends BasePage {
     }
 
     public void clickAddToCartButton() {
-        addToCartButton.click();
+        clickOn(addToCartButton);
     }
 
     public void selectLinkByTitle(String title) {

@@ -8,8 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class WishlistPage extends BasePage {
-    @FindBy(css = ".success-msg")
-    private WebElementFacade addToWishlistSuccessMsg;
+    @FindBy(css = ".success-msg span")
+    private WebElementFacade addToWishlistSuccessMessageText;
     @FindBy(css = "#wishlist-table tbody tr")
     private List<WebElementFacade> productsList;
 
@@ -23,11 +23,11 @@ public class WishlistPage extends BasePage {
     private WebElementFacade addToCartButton;
 
 
-    public String getAddToWishListMsgSuccess() {
-        return addToWishlistSuccessMsg.getText();
+    public String getAddToWishListMessageSuccess() {
+        return addToWishlistSuccessMessageText.getText();
     }
 
-    public WebElementFacade findProductToModifyQty(String name) {
+    public WebElementFacade findProductToModifyQuantity(String name) {
         Assert.assertNotNull(productsList);
         for (WebElementFacade elementFacade : productsList) {
             if (elementFacade.findElement(By.cssSelector(".product-name a")).getText().equalsIgnoreCase(name)) {
@@ -39,13 +39,13 @@ public class WishlistPage extends BasePage {
     }
 
     public void setQuantityWishlistField(String name, int qty) {
-        WebElementFacade element = findProductToModifyQty(name).find(By.cssSelector(".cart-cell .input-text"));
+        WebElementFacade element = findProductToModifyQuantity(name).find(By.cssSelector(".cart-cell .input-text"));
         element.clear();
         typeInto(element, String.valueOf(qty));
     }
 
-    public String getQuantity(String name) {
-        WebElementFacade elementFacade = findProductToModifyQty(name).find(By.cssSelector(".cart-cell .input-text"));
+    public String getQuantityByName(String name) {
+        WebElementFacade elementFacade = findProductToModifyQuantity(name).find(By.cssSelector(".cart-cell .input-text"));
         return elementFacade.getValue();
 
     }

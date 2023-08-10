@@ -23,8 +23,6 @@ public class AccountSteps extends BaseSteps {
 
     @Step
     public void addToWishlist(String productName) {
-        homePage.setSearchText(productName);
-        homePage.clickOnSearchIcon();
         productsListPage.clickAddToWishlistBtn(productName);
     }
 }

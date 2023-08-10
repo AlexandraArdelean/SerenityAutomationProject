@@ -2,6 +2,8 @@ package com.evozon.steps;
 
 import net.thucydides.core.annotations.Step;
 
+import java.util.List;
+
 public class ProductDetailsSteps extends BaseSteps {
     @Step
     public void selectColour(String colour) {
@@ -23,6 +25,12 @@ public class ProductDetailsSteps extends BaseSteps {
         selectColour(colour);
         selectSize(size);
         clickAddToCart();
+    }
+
+    @Step
+    public void selectLinksByTitle(List<String> titleList) {
+        titleList
+                .forEach(productDetailsPage::selectLinkByTitle);
     }
 
     @Step
