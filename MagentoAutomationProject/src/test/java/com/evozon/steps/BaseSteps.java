@@ -1,6 +1,8 @@
 package com.evozon.steps;
 
 import com.evozon.pages.*;
+import com.evozon.pages.AccountInformationPage;
+import com.evozon.pages.checkout.*;
 import net.thucydides.core.steps.ScenarioSteps;
 
 public class BaseSteps extends ScenarioSteps {
@@ -17,5 +19,10 @@ public class BaseSteps extends ScenarioSteps {
     protected AccountInformationPage accountInformationPage;
     protected BillingInformationPage billingInformationPage;
     protected AccountNewsletterPage accountNewsletterPage;
+    protected OrderPreviewPage orderPreviewPage;
+    protected PaymentInformationPage paymentInformationPage;
+    protected ShippingInformationPage shippingInformationPage;
+    protected ShippingMethodPage shippingMethodPage;
+
 
 }

@@ -1,5 +1,6 @@
 package com.evozon.pages;
 
+import com.evozon.pages.BasePage;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.support.FindBy;
 

@@ -1,5 +1,6 @@
-package com.evozon.pages;
+package com.evozon.pages.checkout;
 
+import com.evozon.pages.BasePage;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.support.FindBy;
 
@@ -30,8 +31,8 @@ public class BillingInformationPage extends BasePage {
     private WebElementFacade telephoneField;
     @FindBy(id = "billing:fax")
     private WebElementFacade faxField;
-    @FindBy(id = "billing:use_for_shipping_yes")
-    private WebElementFacade shipToThisAddressField;
+    @FindBy(id = "billing:use_for_shipping_no")
+    private WebElementFacade shipToDifferentAddressRadioButton;
     @FindBy(css = "#billing-buttons-container [title='Continue']")
     private WebElementFacade continueBillingInfoButton;
 
@@ -77,7 +78,7 @@ public class BillingInformationPage extends BasePage {
     }
 
     public void selectCountryFromDropDown(String country) {
-        companyField.selectByVisibleText(country);
+        countryDropDown.selectByVisibleText(country);
 
     }
 
@@ -89,8 +90,8 @@ public class BillingInformationPage extends BasePage {
         typeInto(faxField, fax);
     }
 
-    public void setShipToThisAddressRadioBtn() {
-        clickOn(shipToThisAddressField);
+    public void setShipToDifferentAddress() {
+        clickOn(shipToDifferentAddressRadioButton);
     }
 
     public void clickOnContinueButton() {

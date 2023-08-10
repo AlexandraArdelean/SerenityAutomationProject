@@ -7,6 +7,8 @@ public class OrderConfirmationPage extends BasePage {
     @FindBy(className = "sub-title")
     private WebElementFacade confirmationSubtitleTextHeading;
 
+
+
     public String getConfirmationSubtitleTextHeading() {
         return waitFor(confirmationSubtitleTextHeading).getText();
     }
