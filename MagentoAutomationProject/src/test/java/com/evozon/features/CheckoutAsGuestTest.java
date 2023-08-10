@@ -1,21 +1,24 @@
 package com.evozon.features;
 
+import com.evozon.utils.Constants;
 import com.evozon.utils.Customer;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
+import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.junit.annotations.UseTestDataFrom;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-@RunWith(SerenityParameterizedRunner.class)
-@UseTestDataFrom(value = "features/simple_products.csv")
+//@RunWith(SerenityParameterizedRunner.class)
+//@UseTestDataFrom(value = "features/simple_products.csv")
+@RunWith(SerenityRunner.class)
 public class CheckoutAsGuestTest extends BaseTest {
     private String productName;
 
-    //TODO
+
     @Test
     public void checkOutAsGuestTest() {
-        searchSteps.executeSearch(productName);
-        productsListSteps.addSimpleProductToCart(productName);
+        searchSteps.executeSearch(Constants.SIMPLE_PRODUCT);
+        productsListSteps.addSimpleProductToCart(Constants.SIMPLE_PRODUCT);
         cartSteps.clickBottomCheckout();
         checkoutAsGuestSteps.selectCheckoutAsGuest();
         checkoutAsGuestSteps.clickContinueButton();
