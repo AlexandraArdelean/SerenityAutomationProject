@@ -113,6 +113,11 @@ public class CheckoutAsGuestSteps extends BaseSteps {
     }
 
     @Step
+    public void clickShippingMethodContinue() {
+        checkoutPage.clickShippingContinueButton();
+    }
+
+    @Step
     public void clickOnPlaceOrder() {
         orderPreviewPage.clickOnPlaceOrderButton();
     }

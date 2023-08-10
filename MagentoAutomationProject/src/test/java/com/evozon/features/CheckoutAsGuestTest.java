@@ -1,6 +1,5 @@
 package com.evozon.features;
 
-import com.evozon.utils.Customer;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.thucydides.junit.annotations.UseTestDataFrom;
 import org.junit.Test;
@@ -35,7 +34,8 @@ public class CheckoutAsGuestTest extends BaseTest {
         checkoutAsGuestSteps.selectShipToDifferentAddress();
         checkoutAsGuestSteps.clickContinueToShipping();
         checkoutAsGuestSteps.clickUseBillingAddress();
-        checkoutAsGuestSteps.selectFixedShippingRate();
+        checkoutAsGuestSteps.clickShippingMethodContinue();
+//        checkoutAsGuestSteps.selectFixedShippingRate();
         checkoutAsGuestSteps.clickContinueToPayment();
         checkoutAsGuestSteps.clickContinueToOrderReview();
         checkoutAsGuestSteps.clickOnPlaceOrder();
