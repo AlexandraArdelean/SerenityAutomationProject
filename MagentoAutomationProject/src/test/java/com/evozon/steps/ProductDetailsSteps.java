@@ -29,4 +29,5 @@ public class ProductDetailsSteps extends BaseSteps {
     public void selectLinkByTitle(String title) {
         productDetailsPage.selectLinkByTitle(title);
     }
+
 }

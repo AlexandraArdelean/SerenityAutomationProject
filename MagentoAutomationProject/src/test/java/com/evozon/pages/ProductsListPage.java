@@ -9,17 +9,28 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class ProductsListPage extends BasePage {
+    private final By nextPageLinkBy = By.cssSelector(".category-products > .toolbar .next");
     @FindBy(css = "li.item")
-    private List<WebElementFacade> webElementFacadeList;
-
+    private List<WebElementFacade> productsList;
     @FindBy(css = ".category-products > .toolbar select[title='Sort By']")
     private WebElementFacade sortByDropdown;
-
     @FindBy(css = ".page-title h1")
     private WebElementFacade pageTitleHeading;
 
+    public boolean isLastPage() {
+        return find(nextPageLinkBy) == null || !find(nextPageLinkBy).isVisible();
+    }
+
+    public void goToNextPage() {
+        clickOn(find(nextPageLinkBy));
+    }
+
     public String getPageTitleHeadingText() {
         return pageTitleHeading.getText();
+    }
+
+    public void refreshProductList() {
+        this.getDriver().navigate().refresh();
     }
 
     public boolean isProductInList(String product) {
@@ -27,16 +38,26 @@ public class ProductsListPage extends BasePage {
     }
 
     public void clickAddToWishlistBtn(String productName) {
-        clickOn(findProductByName(productName).findElement(By.cssSelector(".link-wishlist")));
+        clickOn(findProductByName(productName).find(By.cssSelector(".link-wishlist")));
+    }
+
+    public List<String> getProductLinksList() {
+        return this.productsList.stream()
+                .map(el -> el.find(By.className("product-image")).getAttribute("href"))
+                .toList();
+    }
+
+    public void clickOnProductByWebElement(WebElementFacade webElementFacade) {
+        clickOn(webElementFacade.find((By.className("product-image"))));
     }
 
 
     public void addToCartByName(String product) {
-        clickOn(findProductByName(product).findElement(By.className("btn-cart")));
+        clickOn(findProductByName(product).find(By.className("btn-cart")));
     }
 
     public void clickOnProductByName(String product) {
-        clickOn(findProductByName(product).findElement(By.className("product-image")));
+        clickOn(findProductByName(product).find(By.className("product-image")));
     }
 
 
@@ -45,8 +66,8 @@ public class ProductsListPage extends BasePage {
     }
 
     public boolean isSortByPriceAscending() {
-        double firstPrice = getPriceFromProduct(webElementFacadeList.get(0));
-        double lastPrice = getPriceFromProduct(webElementFacadeList.get(webElementFacadeList.size() - 1));
+        double firstPrice = getPriceFromProduct(productsList.get(0));
+        double lastPrice = getPriceFromProduct(productsList.get(productsList.size() - 1));
         if (firstPrice <= lastPrice) {
             return true;
         }
@@ -59,8 +80,8 @@ public class ProductsListPage extends BasePage {
     }
 
     private WebElementFacade findProductByName(String product) {
-        Assert.assertNotNull(webElementFacadeList);
-        for (WebElementFacade element : webElementFacadeList) {
+        Assert.assertNotNull(productsList);
+        for (WebElementFacade element : productsList) {
             if (element.findElement(By.cssSelector(".product-name")).getText().equalsIgnoreCase(product)) {
                 return element;
             }

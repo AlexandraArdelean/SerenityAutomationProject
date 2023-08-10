@@ -53,6 +53,10 @@ public abstract class BaseTest {
     @Steps
     protected HomePageSteps homePageSteps;
 
+
+    @Steps
+    protected ProductListAndDetailsStep productListAndDetailsStep;
+
     @Before
     public void init() {
         driver.manage().window().maximize();

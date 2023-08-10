@@ -15,6 +15,24 @@ public class ProductDetailsPage extends BasePage {
     private List<WebElementFacade> sizeOptionsList;
     @FindBy(css = "#downloadable-links-list li")
     private List<WebElementFacade> linksList;
+    @FindBy(className = "h1")
+    private WebElementFacade productNameSpan;
+    @FindBy(css = ".short-description div")
+    private WebElementFacade shortDescriptionDiv;
+    @FindBy(xpath = "//h2[text()='Details']/following-sibling::div")
+    private WebElementFacade descriptionDiv;
+
+    public String getProductNameSpanText() {
+        return productNameSpan.getText();
+    }
+
+    public String getShortDescriptionDivText() {
+        return shortDescriptionDiv.getText();
+    }
+
+    public String getDescriptionDivText() {
+        return descriptionDiv.getText();
+    }
 
     public void selectColourOption(String colourName) {
         colourOptionsList
@@ -39,7 +57,6 @@ public class ProductDetailsPage extends BasePage {
     public void selectLinkByTitle(String title) {
         linksList
                 .stream()
-//                .peek(el -> System.out.println(el.findElement(By.tagName("label")).getText()))
                 .filter(el -> el.findElement(By.tagName("label")).getText().equalsIgnoreCase(title))
                 .findFirst()
                 .ifPresent(el -> clickOn(el.findElement(By.tagName("input"))));
